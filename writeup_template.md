@@ -20,12 +20,6 @@
 * Fill in the `decision_step()` function within the `decision.py` script with conditional statements that take into consideration the outputs of the `perception_step()` in deciding how to issue throttle, brake and steering commands. 
 * Iterate on your perception and decision function until your rover does a reasonable (need to define metric) job of navigating and mapping.  
 
-[//]: # (Image References)
-
-[image1]: ./misc/rover_image.jpg
-[image2]: ./calibration_images/example_grid1.jpg
-[image3]: ./calibration_images/example_rock1.jpg 
-
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
@@ -55,8 +49,14 @@ And another!
 
 **Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Hi have used most of the function templates, since they're just work, I have modified only the color
+threshold steps in order to filter better the navigable terrain, I also modified the stop and go 
+thresholds to avoid the rover to get stuck when reachin to obstacles in higher velocities. 
+I've got good results collecting 1 sample plus mapping in less than 60 seconds. 
 
+I noted the simulator has some bug in viewing plugin, after the Rover complete collide with rocks
+a navigable terrain is blended with the rock causing the rover to get stuck no matter how good
+is the filtering needing to move the rover manually.
 
 
 ![alt text][image3]
